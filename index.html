@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,65 +77,139 @@
             margin-top: 0;
         }
     </style>
-	
+	<style>
+        /* CSS for the div container */
+        .text-container {
+            font-family: Arial, sans-serif; /* Use a preferred font-family */
+            line-height: 1.6; /* Set the line-height for better readability */
+            color: #333; /* Choose a text color that matches your design */
+            max-width: 600px; /* Limit the maximum width of the text for better reading experience */
+            margin: 0 auto; /* Center the div horizontally */
+            padding: 20px; /* Add some padding for spacing around the text */
+            background-color: #f9f9f9; /* Optional: Add a background color for contrast */
+            border: 1px solid #ccc; /* Optional: Add a border for a box-like look */
+            border-radius: 5px; /* Optional: Round the corners for a softer appearance */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+        }
+
+        /* CSS for the paragraphs inside the div container */
+        .text-container p {
+            margin: 10px 0; /* Add some vertical spacing between paragraphs */
+            /* Additional styles for the paragraphs can be added here */
+        }
+    </style>
+
 </head>
+
 <body>
-	<div style="background-color: #007bff; padding: 20px; text-align: center;">
-        <h1 style="color: #fff; font-size: 48px; margin: 0; font-family: 'Arial', sans-serif;">GFE Association of Apartments Owners</h1>
-        <p style="color: #fff; font-size: 18px; margin: 10px 0; font-family: 'Arial', sans-serif;">Board of Members Nomination</p>
+    <div style="background-color: #007bff; padding: 20px; text-align: center;">
+        <h1 style="color: #fff; font-size: 48px; margin: 0; font-family: 'Arial', sans-serif;">GFE Association of
+            Apartments Owners</h1>
+        <p style="color: #fff; font-size: 18px; margin: 10px 0; font-family: 'Arial', sans-serif;">Board of Members
+            Nomination</p>
     </div>
-    <h2><p align = "center">Below is the list of nominees:</p></h2>
-	<!-- Add more nominees and their serial numbers as needed -->
-	<ul id="nomineeList" class = "ul" align = "center">
+    <h2>
+        <p align="center">Below is the list of nominees:</p>
+    </h2>
+    <!-- Add more nominees and their serial numbers as needed -->
+    <ul id="nomineeList" class="ul" align="center">
         <!-- Nominees will be added dynamically here -->
     </ul>
- 	
-	<!-- Modals for displaying nominee details -->
-	<div id="modal1" class="modal">
-		<div class="modal-content">
-			<span class="close">&times;</span>
-			<h2 id="modalName">Nominee 1 - John Doe</h2>
-			<p id="modalSerialNumber">Serial Number: 001</p>
-			<p id="modalTowerName">Grace</p>
-			<p id="modalFlatNumber">12 A</p>
-			<p id="modalQualification">MBBS</p>
-			<p id="modalProfession">Doctor</p>
-			<div id="modalData">
-				<img id="modalProfilePic" src="" alt="Profile Picture"  style="width:380px;height:550px;">
-				<p id="modalDescription">Loading...</p>
-			</div>
-		</div>
-	</div>
 
-	<div id="modal2" class="modal">
-		<div class="modal-content">
-			<span class="close">&times;</span>
-			<h2 id="modalName">Nominee 2 - Jane Smith</h2>
-			<p id="modalSerialNumber">Serial Number: 002</p>
-			<p id="modalTowerName">Grace</p>
-			<p id="modalFlatNumber">12 A</p>
-			<p id="modalQualification">B Tech in CSE</p>
-			<p id="modalProfession">Professor</p>
-			<div id="modalData">
-				<img id="modalProfilePic" src="" alt="Profile Picture">
-				<p id="modalDescription">Loading...</p>
-			</div>
-		</div>
-	</div>
-	
+    <!-- Modals for displaying nominee details -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalName">Nominee 1 - John Doe</h2>
+            <p id="modalSerialNumber">Serial Number: 001</p>
+            <p id="modalTowerName">Grace</p>
+            <p id="modalFlatNumber">12 A</p>
+            <p id="modalQualification">MBBS</p>
+            <p id="modalProfession">Doctor</p>
+            <div id="modalData">
+                <img id="modalProfilePic" src="" alt="Profile Picture" style="width:380px;height:550px;">
+                <p id="modalDescription">Loading...</p>
+            </div>
+        </div>
+    </div>
 
-    <h2 align="center">Manifesto Details:</h2>
-    <ul align="center">
-        <li>Manifesto detail 1</li>
-        <li>Manifesto detail 2</li>
-        <li>Manifesto detail 3</li>
-        <!-- Add more manifesto details in a list format -->
-    </ul>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalName">Nominee 2 - Jane Smith</h2>
+            <p id="modalSerialNumber">Serial Number: 002</p>
+            <p id="modalTowerName">Grace</p>
+            <p id="modalFlatNumber">12 A</p>
+            <p id="modalQualification">B Tech in CSE</p>
+            <p id="modalProfession">Professor</p>
+            <div id="modalData">
+                <img id="modalProfilePic" src="" alt="Profile Picture">
+                <p id="modalDescription">Loading...</p>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div>
+        <h2 class="text-container">Manifesto for the Equal Expertise, Harmony Society - Selection of Board</h2>
+        <ul>
+            <li>
+                <p><b>Equal Rights and Inclusivity: </b>We firmly believe in providing equal rights and
+                    opportunities to all members of our society, regardless of their background, profession,
+                    or social status. Every individual's voice and concerns will be heard and respected.</p>
+            </li>
+            <li>
+                <p><b>Adherence to Legal Obligations:</b>We will uphold and strictly follow all legal rights and
+                    obligations of every member as per their respective legal deeds. Our committment to
+                    legality ensures a fair and just environment within the society.</p>
+            </li>
+            <li>
+                <p><b>Diverse Expertise:</b> Our society comprises professionals from various fields, including
+                    Doctor, Scientist, Civil Engineer, Assistant Professor, Electrical Engineer, Mechanical
+                    Engineer, Chartered Accountant, Police Officer, Lawyer, and Social Workers. This
+                    diversity allows us to address the diverse needs of our community effectively.</p>
+            </li>
+            <li>
+                <p><b>Problem Solving through Expertise: </b> We recognize that the society might face various
+                    challenges and issues. As board members, we will leverage our collective expertise to
+                    find innovative and practical solutions for any problem that arises.</p>
+            </li>
+            <li>
+                <p><b>Preserving Harmony: </b> Harmony within the society is paramount to us. We will foster an
+                    environment where members can coexist peacefully, fostering a strong sense of
+                    community and mutual respect.</p>
+            </li>
+            <li>
+                <p><b>Transparency in Builder Dealings:</b> With our expertise on the board, we will ensure that
+                    builders cannot take advantage of society members during the handover or takeover
+                    processes. Transparent dealings will be a priority.</p>
+            </li>
+            <li>
+                <p><b>Resisting Unfair Treatment:</b> Recent events have shown that the dissolved Ad-hoc
+                    committee members have displayed a flagrant disrespect for their fellow members,
+                    using derogatory language that demeans and undermines the hard work and dedication
+                    of others. The term "BOSTIBASHI" that they used is not only offensive but reveals a
+                    disturbing attitude towards fellow members, suggesting they view themselves as
+                    superior and others as mere servants or subordinates. By allowing those who have
+                    shown such disregard for their peers to become board members, we risk compromising
+                    the very essence of our community.</p>
+            </li>
+            <li>
+                <p><b>Reduced Maintenance Charges:</b> we will strive to reduce maintenance charges while
+                    ensuring the society's essential amenities and services are well-maintained.</p>
+            </li>
+            <li>
+                <p><b>Support for Non-Resident Members:</b> We will take special care of non-resident members
+                    who wish to rent out their flats, ensuring a smooth and peaceful rental process.</p>
+            </li>
+            <!-- Add more manifesto details in a list format -->
+        </ul>
+    </div>
 
     <!-- Add any additional content as needed -->
 
-    
-	<script>
+
+    <script>
         // JavaScript code for reading CSV file and displaying names
         fetch('nominees.csv')
             .then(response => response.text())
@@ -142,101 +217,101 @@
                 const lines = data.split('\n');
                 const header = lines[0].split(',');
                 const nominees = lines.slice(1);
-				
+
                 const nomineeList = document.getElementById('nomineeList');
 
                 nominees.forEach(nominee => {
                     const [serialNumber, name, tower, flatNumber, qualification, profession, about] = nominee.split(',');
                     const listItem = document.createElement('li');
                     const link = document.createElement('a');
-					link.href = `#modal1`;					
+                    link.href = `#modal1`;
                     link.textContent = `${name.trim()} : →: ${serialNumber.trim()}`;
-					link.id = serialNumber
-					listItem.class = "li"
+                    link.id = serialNumber
+                    listItem.class = "li"
                     listItem.appendChild(link);
                     nomineeList.appendChild(listItem);
                 });
-				
-				modalGenerate(nominees)		
+
+                modalGenerate(nominees)
 
                 // Rest of your code for modals and other functionality remains unchanged
             })
-            .catch(error => console.error('Error reading CSV file:', error));			
-		
+            .catch(error => console.error('Error reading CSV file:', error));
+
     </script>
-	<script>
-	function modalGenerate(nominees) {
-		var modals = document.querySelectorAll(".modal");
-		var links = document.querySelectorAll("a");
-		links.forEach(function(link) {
-			link.addEventListener("click", function(e) {
-				e.preventDefault();
-				var target = this.getAttribute("href");
-				var id = this.getAttribute("id");
-				var modal = document.querySelector(target);
-				modal.style.display = "block";
-				nomineVals = getnomineVals(nominees, id)
-				const [nomineeSerialNumber, nomineeName, nomineeTower, nomineeFlatNumber, nomineeQualification, nomineeProfession, nomineeAbout] = nomineVals.split(',');
-				srcProfilePic = "images/" + nomineeSerialNumber + ".jpeg"
-				const nomineeData = {
-					name: nomineeName,
-					serialNumber: nomineeSerialNumber,
-					towerName: nomineeTower, 
-					flatNumber: nomineeFlatNumber, 
-					qualification: nomineeQualification,
-					profession: nomineeProfession, 
-					profilePic: srcProfilePic ,
-					description: nomineeAbout,					
-				};
-				
-            // Populate the modal with the dynamic data
-				updateModalData(nomineeData.name, nomineeData.serialNumber, nomineeData.towerName, nomineeData.flatNumber, nomineeData.qualification, nomineeData.profession, nomineeData.profilePic, nomineeData.description);
-			});
-		});
+    <script>
+        function modalGenerate(nominees) {
+            var modals = document.querySelectorAll(".modal");
+            var links = document.querySelectorAll("a");
+            links.forEach(function (link) {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    var target = this.getAttribute("href");
+                    var id = this.getAttribute("id");
+                    var modal = document.querySelector(target);
+                    modal.style.display = "block";
+                    nomineVals = getnomineVals(nominees, id)
+                    const [nomineeSerialNumber, nomineeName, nomineeTower, nomineeFlatNumber, nomineeQualification, nomineeProfession, nomineeAbout] = nomineVals.split(',');
+                    srcProfilePic = "images/" + nomineeSerialNumber + ".jpeg"
+                    const nomineeData = {
+                        name: nomineeName,
+                        serialNumber: nomineeSerialNumber,
+                        towerName: nomineeTower,
+                        flatNumber: nomineeFlatNumber,
+                        qualification: nomineeQualification,
+                        profession: nomineeProfession,
+                        profilePic: srcProfilePic,
+                        description: nomineeAbout,
+                    };
 
-		modals.forEach(function(modal) {
-			var closeButton = modal.querySelector(".close");
-			closeButton.addEventListener("click", function() {
-				modal.style.display = "none";
-			});
-		});
-	}	
-	
-	
-			
-	function updateModalData(name, serialNumber, towerName, flatNumber, qualification, profession, profilePic, description) {
-        const modalName = document.getElementById('modalName');
-        const modalSerialNumber = document.getElementById('modalSerialNumber');
-		
-		const modalTowerName = document.getElementById('modalTowerName');
-		const modalFlatNumber = document.getElementById('modalFlatNumber');
-		const modalQualification = document.getElementById('modalQualification');
-		const modalProfession = document.getElementById('modalProfession');	
-        const modalProfilePic = document.getElementById('modalProfilePic');
-        const modalDescription = document.getElementById('modalDescription');
+                    // Populate the modal with the dynamic data
+                    updateModalData(nomineeData.name, nomineeData.serialNumber, nomineeData.towerName, nomineeData.flatNumber, nomineeData.qualification, nomineeData.profession, nomineeData.profilePic, nomineeData.description);
+                });
+            });
 
-        modalName.textContent = name;
-        modalSerialNumber.textContent = `Serial Number: ${serialNumber}`;
-		
-		modalTowerName.textContent = `Tower Name: ${towerName}`;
-		modalFlatNumber.textContent = `Flat Number: ${flatNumber}`;
-		modalQualification.textContent = `Highest Qualification: ${qualification}`;
-		modalProfession.textContent = `Profession: ${profession}`;
-		
-        modalProfilePic.src = profilePic;
-        modalDescription.textContent = description;
-    }
-	
-	function getnomineVals(nominees, serialNumber)
-	{
-		nomineVal = '';
-		nominees.forEach(nominee => {
-			const [serialNumber1, name, tower, flatNumber, qualification, profession, about] = nominee.split(',');
-			if(serialNumber1 == serialNumber)
-				nomineVal = nominee
-		});
-		return nomineVal;
-	}
-	</script>	
+            modals.forEach(function (modal) {
+                var closeButton = modal.querySelector(".close");
+                closeButton.addEventListener("click", function () {
+                    modal.style.display = "none";
+                });
+            });
+        }
+
+
+
+        function updateModalData(name, serialNumber, towerName, flatNumber, qualification, profession, profilePic, description) {
+            const modalName = document.getElementById('modalName');
+            const modalSerialNumber = document.getElementById('modalSerialNumber');
+
+            const modalTowerName = document.getElementById('modalTowerName');
+            const modalFlatNumber = document.getElementById('modalFlatNumber');
+            const modalQualification = document.getElementById('modalQualification');
+            const modalProfession = document.getElementById('modalProfession');
+            const modalProfilePic = document.getElementById('modalProfilePic');
+            const modalDescription = document.getElementById('modalDescription');
+
+            modalName.textContent = name;
+            modalSerialNumber.textContent = `Serial Number: ${serialNumber}`;
+
+            modalTowerName.textContent = `Tower Name: ${towerName}`;
+            modalFlatNumber.textContent = `Flat Number: ${flatNumber}`;
+            modalQualification.textContent = `Highest Qualification: ${qualification}`;
+            modalProfession.textContent = `Profession: ${profession}`;
+
+            modalProfilePic.src = profilePic;
+            modalDescription.textContent = description;
+        }
+
+        function getnomineVals(nominees, serialNumber) {
+            nomineVal = '';
+            nominees.forEach(nominee => {
+                const [serialNumber1, name, tower, flatNumber, qualification, profession, about] = nominee.split(',');
+                if (serialNumber1 == serialNumber)
+                    nomineVal = nominee
+            });
+            return nomineVal;
+        }
+    </script>
 </body>
+
 </html>
