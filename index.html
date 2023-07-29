@@ -98,7 +98,7 @@
             /* Additional styles for the paragraphs can be added here */
         }
     </style>
-
+	<script src="papaparse.min.js"></script>
 </head>
 
 <body>
@@ -208,7 +208,7 @@
 
     <!-- Add any additional content as needed -->
 
-
+	
     <script>
         // JavaScript code for reading CSV file and displaying names
         fetch('nominees.csv')
@@ -217,8 +217,12 @@
                 const lines = data.split('\n');
                 const header = lines[0].split(',');
                 const nominees = lines.slice(1);
+				
+				
 
                 const nomineeList = document.getElementById('nomineeList');
+				
+				
 
                 nominees.forEach(nominee => {
                     const [serialNumber, name, tower, flatNumber, qualification, profession, about] = nominee.split(',');
@@ -239,6 +243,8 @@
             .catch(error => console.error('Error reading CSV file:', error));
 
     </script>
+	
+
     <script>
         function modalGenerate(nominees) {
             var modals = document.querySelectorAll(".modal");
@@ -312,6 +318,7 @@
             return nomineVal;
         }
     </script>
+	
 </body>
 
 </html>
