@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenfield Elegance Society Election</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            max-width: 400px;
+            border-radius: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+    </style>
+	
+</head>
+<body>
+	<div style="background-color: #007bff; padding: 20px; text-align: center;">
+        <h1 style="color: #fff; font-size: 48px; margin: 0; font-family: 'Arial', sans-serif;">GFE Association of Apartments Owners</h1>
+        <p style="color: #fff; font-size: 18px; margin: 10px 0; font-family: 'Arial', sans-serif;">Board of Members Nomination</p>
+    </div>
+    <h2><p align = "center">Below is the list of nominees:</p></h2>
+	<!-- Add more nominees and their serial numbers as needed -->
+	<ul id="nomineeList" class = "ul" align = "center">
+        <!-- Nominees will be added dynamically here -->
+    </ul>
+ 	
+	<!-- Modals for displaying nominee details -->
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2 id="modalName">Nominee 1 - John Doe</h2>
+			<p id="modalSerialNumber">Serial Number: 001</p>
+			<p id="modalTowerName">Grace</p>
+			<p id="modalFlatNumber">12 A</p>
+			<p id="modalQualification">MBBS</p>
+			<p id="modalProfession">Doctor</p>
+			<div id="modalData">
+				<img id="modalProfilePic" src="" alt="Profile Picture">
+				<p id="modalDescription">Loading...</p>
+			</div>
+		</div>
+	</div>
+
+	<div id="modal2" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2 id="modalName">Nominee 2 - Jane Smith</h2>
+			<p id="modalSerialNumber">Serial Number: 002</p>
+			<p id="modalTowerName">Grace</p>
+			<p id="modalFlatNumber">12 A</p>
+			<p id="modalQualification">B Tech in CSE</p>
+			<p id="modalProfession">Professor</p>
+			<div id="modalData">
+				<img id="modalProfilePic" src="" alt="Profile Picture">
+				<p id="modalDescription">Loading...</p>
+			</div>
+		</div>
+	</div>
+	
+
+    <h2 align="center">Manifesto Details:</h2>
+    <ul align="center">
+        <li>Manifesto detail 1</li>
+        <li>Manifesto detail 2</li>
+        <li>Manifesto detail 3</li>
+        <!-- Add more manifesto details in a list format -->
+    </ul>
+
+    <!-- Add any additional content as needed -->
+
+    
+	<script>
+        // JavaScript code for reading CSV file and displaying names
+        fetch('nominees.csv')
+            .then(response => response.text())
+            .then(data => {
+                const lines = data.split('\n');
+                const header = lines[0].split(',');
+                const nominees = lines.slice(1);
+				
+                const nomineeList = document.getElementById('nomineeList');
+
+                nominees.forEach(nominee => {
+                    const [serialNumber, name, tower, flatNumber, qualification, profession, about] = nominee.split(',');
+                    const listItem = document.createElement('li');
+                    const link = document.createElement('a');
+					link.href = `#modal1`;					
+                    link.textContent = `${name.trim()} : →: ${serialNumber.trim()}`;
+					link.id = serialNumber
+					listItem.class = "li"
+                    listItem.appendChild(link);
+                    nomineeList.appendChild(listItem);
+                });
+				
+				modalGenerate(nominees)		
+
+                // Rest of your code for modals and other functionality remains unchanged
+            })
+            .catch(error => console.error('Error reading CSV file:', error));			
+		
+    </script>
+	<script>
+	function modalGenerate(nominees) {
+		var modals = document.querySelectorAll(".modal");
+		var links = document.querySelectorAll("a");
+		links.forEach(function(link) {
+			link.addEventListener("click", function(e) {
+				e.preventDefault();
+				var target = this.getAttribute("href");
+				var id = this.getAttribute("id");
+				var modal = document.querySelector(target);
+				modal.style.display = "block";
+				nomineVals = getnomineVals(nominees, id)
+				const [nomineeSerialNumber, nomineeName, nomineeTower, nomineeFlatNumber, nomineeQualification, nomineeProfession, nomineeAbout] = nomineVals.split(',');
+				srcProfilePic = "images/" + nomineeSerialNumber + ".jpg"
+				const nomineeData = {
+					name: nomineeName,
+					serialNumber: nomineeSerialNumber,
+					towerName: nomineeTower, 
+					flatNumber: nomineeFlatNumber, 
+					qualification: nomineeQualification,
+					profession: nomineeProfession, 
+					profilePic: srcProfilePic ,
+					description: nomineeAbout,					
+				};
+				
+            // Populate the modal with the dynamic data
+				updateModalData(nomineeData.name, nomineeData.serialNumber, nomineeData.towerName, nomineeData.flatNumber, nomineeData.qualification, nomineeData.profession, nomineeData.profilePic, nomineeData.description);
+			});
+		});
+
+		modals.forEach(function(modal) {
+			var closeButton = modal.querySelector(".close");
+			closeButton.addEventListener("click", function() {
+				modal.style.display = "none";
+			});
+		});
+	}	
+	
+	
+			
+	function updateModalData(name, serialNumber, towerName, flatNumber, qualification, profession, profilePic, description) {
+        const modalName = document.getElementById('modalName');
+        const modalSerialNumber = document.getElementById('modalSerialNumber');
+		
+		const modalTowerName = document.getElementById('modalTowerName');
+		const modalFlatNumber = document.getElementById('modalFlatNumber');
+		const modalQualification = document.getElementById('modalQualification');
+		const modalProfession = document.getElementById('modalProfession');	
+        const modalProfilePic = document.getElementById('modalProfilePic');
+        const modalDescription = document.getElementById('modalDescription');
+
+        modalName.textContent = name;
+        modalSerialNumber.textContent = `Serial Number: ${serialNumber}`;
+		
+		modalTowerName.textContent = `Tower Name: ${towerName}`;
+		modalFlatNumber.textContent = `Flat Number: ${flatNumber}`;
+		modalQualification.textContent = `Highest Qualification: ${qualification}`;
+		modalProfession.textContent = `Profession: ${profession}`;
+		
+        modalProfilePic.src = profilePic;
+        modalDescription.textContent = description;
+    }
+	
+	function getnomineVals(nominees, serialNumber)
+	{
+		nomineVal = '';
+		nominees.forEach(nominee => {
+			const [serialNumber1, name, tower, flatNumber, qualification, profession, about] = nominee.split(',');
+			if(serialNumber1 == serialNumber)
+				nomineVal = nominee
+		});
+		return nomineVal;
+	}
+	</script>	
+</body>
+</html>
